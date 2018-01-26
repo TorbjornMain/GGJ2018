@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33709423081374798}
   - component: {fileID: 65722102722293656}
   - component: {fileID: 23241619115064990}
+  - component: {fileID: 114687340980589306}
   m_Layer: 0
   m_Name: GreyboxExit
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651498686485866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.554, y: 2.522, z: 5.53}
+  m_LocalPosition: {x: 0.09, y: 4.81, z: 15.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,8 +89,20 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651498686485866}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114687340980589306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651498686485866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb9f45b3b935d24286a89caea119e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: 
