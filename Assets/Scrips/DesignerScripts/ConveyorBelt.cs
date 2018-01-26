@@ -24,7 +24,7 @@ public class ConveyorBelt : MonoBehaviour {
 
     private void Update()
     {
-        offset += Time.deltaTime * speed;
+        offset += Time.deltaTime * speed*0.5f/*the half is because the belt indicator's tiling is x2 */;
         rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
     }
 }

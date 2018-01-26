@@ -151,6 +151,11 @@ Prefab:
       propertyPath: m_Name
       value: ConveyorSegment (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114670843532585758, guid: e73a3cdcbf46bcd4fa272e38a9a24011,
+        type: 2}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e73a3cdcbf46bcd4fa272e38a9a24011, type: 2}
   m_IsPrefabParent: 0
@@ -398,7 +403,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4584041960761338, guid: e73a3cdcbf46bcd4fa272e38a9a24011, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e73a3cdcbf46bcd4fa272e38a9a24011, type: 2}
@@ -1900,7 +1905,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4584041960761338, guid: e73a3cdcbf46bcd4fa272e38a9a24011, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1415030460747080, guid: e73a3cdcbf46bcd4fa272e38a9a24011, type: 2}
       propertyPath: m_Name
@@ -1909,7 +1914,7 @@ Prefab:
     - target: {fileID: 114670843532585758, guid: e73a3cdcbf46bcd4fa272e38a9a24011,
         type: 2}
       propertyPath: speed
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e73a3cdcbf46bcd4fa272e38a9a24011, type: 2}
@@ -1997,7 +2002,7 @@ Transform:
   - {fileID: 687271387}
   - {fileID: 1437905293}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963693219
 GameObject:
@@ -2239,7 +2244,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &2140877802
 Prefab:
