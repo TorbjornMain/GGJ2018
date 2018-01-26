@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ConveyorButton : MonoBehaviour {
+    public ConveyorBelt pairedBelt;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+
+    public void Activate()
+    {
+        pairedBelt.speed *= -1f;
+    }
+
 }
