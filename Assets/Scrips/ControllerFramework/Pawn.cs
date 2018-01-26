@@ -10,7 +10,7 @@ public class Pawn : MonoBehaviour {
     public Camera cam;
     public int ID;
 
-    void Start()
+    protected virtual void Start()
     {
         ID = Random.Range(0, 999);
     }

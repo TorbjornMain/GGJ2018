@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4719880549018108}
   - component: {fileID: 33522557317735930}
   - component: {fileID: 23251577423192544}
+  - component: {fileID: 114774799033851010}
   m_Layer: 0
   m_Name: polySurface2
   m_TagString: Untagged
@@ -114,7 +115,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451294463756476}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -218,7 +219,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451294463756476}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &92783488818921718
 Behaviour:
   m_ObjectHideFlags: 1
@@ -257,6 +258,7 @@ MonoBehaviour:
   minView: -88
   maxView: 10
   sensitivity: 3
+  roomba: {fileID: 114585826323662800}
 --- !u!114 &114585826323662800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,9 +270,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71abd88adeb90d448a67b2c52a79daa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveVector: {x: 0, y: 0, z: 0}
+  CamVector: {x: 0, y: 0, z: 0}
+  controller: {fileID: 0}
+  cam: {fileID: 20150054793228476}
+  ID: 0
   turnRate: 100
   moveSpeed: 1
   fallSpeed: 0
+--- !u!114 &114774799033851010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1152524082841776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roboColour: {r: 0.034482718, g: 1, b: 0, a: 0.3}
 --- !u!124 &124263669930970412
 Behaviour:
   m_ObjectHideFlags: 1

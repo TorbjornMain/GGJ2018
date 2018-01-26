@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoombaControl : MonoBehaviour
+public class RoombaControl : Pawn
 {
     public float turnRate = 1;
     Rigidbody rb;
@@ -10,8 +10,9 @@ public class RoombaControl : MonoBehaviour
     public float fallSpeed;
     bool grounded;
     // Use this for initialization
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.useGravity = false;
@@ -22,9 +23,8 @@ public class RoombaControl : MonoBehaviour
     {
         if (grounded)
         {
-            rb.
-            transform.Rotate(0, Input.GetAxis("Horizontal") * turnRate * Time.deltaTime, 0);
-            Vector3 targetVelocity = new Vector3(0, 0, Input.GetAxis("Vertical"));
+            rb.transform.Rotate(0, MoveVector.x * turnRate * Time.deltaTime, 0);
+            Vector3 targetVelocity = new Vector3(0, 0, MoveVector.z);
             targetVelocity = transform.TransformDirection(targetVelocity);
             targetVelocity *= moveSpeed;
             Vector3 velocity = rb.velocity;

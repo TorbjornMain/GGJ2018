@@ -16,6 +16,11 @@ public class Controller : MonoBehaviour {
 
     public void UnposessPawn()
     {
+        if (posessedPawn)
+        {
+            posessedPawn.UpdateMoveVector(Vector3.zero);
+            posessedPawn.UpdateCamVector(Vector3.zero);
+        }
         LeanTween.value(gameObject, delegate(float f) { if(posessedPawn) if (posessedPawn.cam) posessedPawn.cam.fieldOfView = f; },FOVStart, FOVEnd, posessTime).setOnComplete(unposessPawn);
     }
 
