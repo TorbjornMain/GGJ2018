@@ -3,22 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Controller : MonoBehaviour {
-    public Pawn possessedPawn;
-
-    public void PossessPawn(Pawn target)
+    public Pawn posessedPawn;
+    public float posessTime = 0.3f;
+    public float FOVStart = 90;
+    public float FOVEnd = 30;
+    public void PosessPawn(Pawn target)
     {
-        
-        if(target.controller != null)
-        {
-            target.controller.UnpossessPawn();
-        }
-        possessedPawn = target;
-        target.controller = this;
+        if (target.cam)
+            target.cam.fieldOfView = FOVEnd;
+        StartCoroutine(posessPawn(target));
     }
 
-    public void UnpossessPawn()
+    public void UnposessPawn()
     {
-        possessedPawn.controller = null;
-        possessedPawn = null;
+        LeanTween.value(gameObject, delegate(float f) { if(posessedPawn) if (posessedPawn.cam) posessedPawn.cam.fieldOfView = f; },FOVStart, FOVEnd, posessTime).setOnComplete(unposessPawn);
+    }
+
+    protected virtual IEnumerator posessPawn(Pawn target)
+    {
+        UnposessPawn();
+        if(target.controller != null)
+        {
+            target.controller.UnposessPawn();
+        }
+        yield return new WaitForSeconds(posessTime);
+        posessedPawn = target;
+        target.controller = this;
+        LeanTween.value(gameObject, delegate (float f) { if (posessedPawn.cam) posessedPawn.cam.fieldOfView = f; }, FOVEnd, FOVStart, posessTime);
+    }
+
+    protected virtual void unposessPawn()
+    {
+        posessedPawn.controller = null;
+        posessedPawn = null;
     }
 }

@@ -6,7 +6,7 @@ public class ReplacementShaderScript : MonoBehaviour {
 
     public Shader ReplacementShader;
 
-    bool shaderActive = false;
+    public bool shaderActive = false;
 	
     void Start()
     {
