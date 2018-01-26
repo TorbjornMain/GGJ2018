@@ -6,6 +6,6 @@ public class VentOpener : MonoBehaviour {
 
 	void Trigger()
     {
-        LeanTween.rotate(gameObject, new Vector3(90, 0, 0), 1);
+        LeanTween.rotate(gameObject, new Vector3(90, 0, 0), 1).setEaseInQuad();
     }
 }
