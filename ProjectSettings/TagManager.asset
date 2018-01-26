@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Moveable
   - Robot
+  - Destroyer
   layers:
   - Default
   - TransparentFX
