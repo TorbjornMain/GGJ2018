@@ -14,5 +14,5 @@ public class RobovisionColourSetter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         r.material.SetColor("_RoboVisionColour", roboColour);
-	}
+    }
 }
