@@ -11,7 +11,7 @@ public class PressurePlate : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Crate")
+        if(collision.gameObject.tag == "Moveable")
         {
             vent.SendMessage("Trigger");
         }
