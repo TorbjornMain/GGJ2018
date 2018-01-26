@@ -1165,6 +1165,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114687340980589306, guid: ec610488a03385440be067f93fef6b3c,
+        type: 2}
+      propertyPath: nextLevel
+      value: Greybox_Level01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec610488a03385440be067f93fef6b3c, type: 2}
   m_IsPrefabParent: 0
