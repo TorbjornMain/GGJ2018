@@ -8,6 +8,11 @@ public class ReplacementShaderScript : MonoBehaviour {
 
     bool shaderActive = false;
 	
+    void Start()
+    {
+        ToggleShader();
+    }
+
     public void ToggleShader()
     {
         shaderActive = !shaderActive;
