@@ -7,9 +7,9 @@
 	}
 		SubShader
 	{
-		Tags { "RenderType" = "Opaque" "Visibility" = "Robot" }
+		Tags { "Queue"="Transparent+1" "RenderType" = "Opaque" "Visibility" = "Robot" }
 		LOD 100
-
+		Blend One Zero
 		Pass
 		{
 			CGPROGRAM
@@ -49,7 +49,7 @@
 				fixed4 col = _RoboVisionColour;
 				return col;
 			}
-		ENDCG
+			ENDCG
 		}
 	}
 	SubShader

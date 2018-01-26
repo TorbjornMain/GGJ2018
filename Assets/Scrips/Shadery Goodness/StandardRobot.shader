@@ -4,7 +4,7 @@ Shader "RoboVision/Robot"
 {
     Properties
     {
-		_RoboVisionColour("RoboVisionColour", Color) = (0,0,0,0.3)
+		_RoboVisionColour("RoboVisionColour", Color) = (1,0,0,0.3)
         _Color("Color", Color) = (1,1,1,1)
         _MainTex("Albedo", 2D) = "white" {}
 
