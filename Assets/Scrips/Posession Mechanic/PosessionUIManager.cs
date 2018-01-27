@@ -13,6 +13,7 @@ public class PosessionUIManager : MonoBehaviour {
     public Color nonPosessableColour = Color.red;
     public AnimationCurve distanceScaleCurve;
     public float distanceScale = 100.0f;
+    public Text RMBText;
     Canvas c;
     void Start()
     {
@@ -31,6 +32,7 @@ public class PosessionUIManager : MonoBehaviour {
 
     void Update()
     {
+        RMBText.gameObject.SetActive(false);
         if (pm.WidgetPositions == null)
             return;
 
@@ -39,7 +41,7 @@ public class PosessionUIManager : MonoBehaviour {
             if(pc.posessedPawn.cam)
             {
                 c.worldCamera = pc.posessedPawn.cam;
-                c.planeDistance = 0.05f;
+                c.planeDistance = 0.4f;
             }
         }
         for(int i = 0; i < pm.WidgetPositions.Count; i++)
@@ -48,6 +50,8 @@ public class PosessionUIManager : MonoBehaviour {
             Vector2 viewportPosToScreenPos = new Vector2((pm.WidgetPositions[i].screenSpacePosition.x * r.sizeDelta.x) - (r.sizeDelta.x * 0.5f), (pm.WidgetPositions[i].screenSpacePosition.y * r.sizeDelta.y) - (r.sizeDelta.y * 0.5f));
             widgets[i].image.rectTransform.localPosition = viewportPosToScreenPos;
             widgets[i].image.color = widgets[i].text.color = pm.WidgetPositions[i].isPossessable ? posessableColour : nonPosessableColour;
+            if (pm.WidgetPositions[i].isPossessable)
+                RMBText.gameObject.SetActive(true);
             widgets[i].image.rectTransform.localScale = Vector3.one *  distanceScaleCurve.Evaluate(pm.WidgetPositions[i].distance / distanceScale);
             widgets[i].text.text = pm.WidgetPositions[i].ID.ToString("000");
         }
