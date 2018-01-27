@@ -19,6 +19,14 @@ public class PlayerController : Controller {
             {
                 SendMessage("DoPosess");
             }
+            if(Input.GetButtonDown("Fire1"))
+            {
+                posessedPawn.OnFire1Pressed();
+            }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                posessedPawn.OnFire1Release();
+            }
         }
     }
 

@@ -37,7 +37,7 @@ public class PosessionManager : MonoBehaviour {
                 {
                     if (item == pc.posessedPawn)
                         continue;
-                    if(Vector3.Dot(camTransform.forward, (item.transform.position - camTransform.position).normalized) > Mathf.Cos(pc.posessedPawn.cam.fieldOfView * Mathf.Deg2Rad / 2) && Vector3.Magnitude(item.transform.position - camTransform.position) < PosessionRange)
+                    if(Vector3.Dot(camTransform.forward, (item.transform.position - camTransform.position).normalized) > Mathf.Cos(pc.posessedPawn.cam.fieldOfView * Mathf.Deg2Rad) && Vector3.Magnitude(item.transform.position - camTransform.position) < PosessionRange)
                     {
                         RaycastHit rc = new RaycastHit();
                         ReplacementShaderScript rp;
@@ -78,7 +78,7 @@ public class PosessionManager : MonoBehaviour {
                                     }
                                     WidgetPositions.Add(wp);
                                 }
-                                else if(rc.collider.gameObject == item.gameObject)
+                                else if(rc.collider.transform.root.gameObject == item.gameObject)
                                 {
                                     UIWidgetPosition wp = new UIWidgetPosition();
                                     wp.ID = item.ID;
@@ -112,7 +112,7 @@ public class PosessionManager : MonoBehaviour {
                                 }
                                 WidgetPositions.Add(wp);
                             }
-                            else if (rc.collider.gameObject == item.gameObject)
+                            else if (rc.collider.transform.root.gameObject == item.gameObject)
                             {
                                 UIWidgetPosition wp = new UIWidgetPosition();
                                 wp.ID = item.ID;

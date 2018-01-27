@@ -9,10 +9,20 @@ public class Pawn : MonoBehaviour {
     public Controller controller;
     public Camera cam;
     public int ID;
+    public bool firing = false;
+
 
     protected virtual void Start()
     {
         ID = Random.Range(0, 999);
+    }
+
+    protected virtual void Update()
+    {
+        if(controller == null)
+        {
+            MoveVector = CamVector = Vector3.zero;
+        }
     }
     public void UpdateMoveVector(Vector3 move)
     {
@@ -24,8 +34,12 @@ public class Pawn : MonoBehaviour {
         CamVector = cam;
     }
 
-    public virtual void OnFire1()
+    public virtual void OnFire1Pressed()
     {
-
+        firing = true;
+    }
+    public virtual void OnFire1Release()
+    {
+        firing = false;
     }
 }

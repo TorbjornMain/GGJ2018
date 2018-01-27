@@ -16,7 +16,7 @@ public class CameraPawn : Pawn {
 
 
     // Update is called once per frame
-    void Update () {
+    protected override void Update () {
         CamVector.x *= -1;
 
         addAng += CamVector * Time.deltaTime * sensitivity;
