@@ -23,11 +23,11 @@ public class RoombaControl : Pawn
     {
         base.Update();
         RaycastHit rc = new RaycastHit();
-        Vector3 diagonalForward = transform.rotation * new Vector3(0, -1, Mathf.Sign(MoveVector.z) * moveSpeed / 2).normalized;
+        Vector3 diagonalForward = transform.rotation * new Vector3(0, -1, 2 * Mathf.Sign(MoveVector.z)).normalized;
         rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, CamVector.y * Time.deltaTime * turnRate, 0)));
         Vector3 rn = rayNode;
         rn.z *= Mathf.Sign(MoveVector.z);
-        if (Physics.Raycast(transform.TransformPoint(rn), diagonalForward, out rc, Mathf.Abs(MoveVector.z)))
+        if (Physics.Raycast(transform.TransformPoint(rn), diagonalForward , out rc, Mathf.Abs(MoveVector.z)))
         {
             if (Vector3.Dot(rc.normal, Vector3.up) > Mathf.Cos(15 * Mathf.Deg2Rad))
             {
@@ -38,5 +38,13 @@ public class RoombaControl : Pawn
                 }
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 rn = rayNode;
+        rn.z *= Mathf.Sign(MoveVector.z);
+        Vector3 diagonalForward = transform.rotation * new Vector3(0, -1, 2 * Mathf.Sign(MoveVector.z)).normalized;
+        Gizmos.DrawLine(transform.TransformPoint(rn), transform.TransformPoint(rn) + diagonalForward * Mathf.Abs(MoveVector.z));
     }
 }

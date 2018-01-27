@@ -753,7 +753,7 @@ MonoBehaviour:
   turnRate: 40
   moveSpeed: 5
   slopeLimit: 15
-  rayNode: {x: 0, y: 0, z: 0.3}
+  rayNode: {x: 0, y: -0.3, z: 0.3}
   centerOfMass: {fileID: 4347814000546058}
   parentingPoint: {fileID: 4928959727763062}
   fork: {fileID: 1934036420747586}

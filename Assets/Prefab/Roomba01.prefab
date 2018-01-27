@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minView: -88
-  maxView: 10
+  maxView: 30
   sensitivity: 3
   roomba: {fileID: 114585826323662800}
 --- !u!114 &114172120141720644
@@ -900,7 +900,7 @@ MonoBehaviour:
   turnRate: 100
   moveSpeed: 1
   slopeLimit: 15
-  rayNode: {x: 0, y: 0.03, z: 0.1}
+  rayNode: {x: 0, y: 0.11, z: 0.1}
 --- !u!114 &114774799033851010
 MonoBehaviour:
   m_ObjectHideFlags: 0
