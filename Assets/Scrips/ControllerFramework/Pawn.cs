@@ -14,6 +14,14 @@ public class Pawn : MonoBehaviour {
     {
         ID = Random.Range(0, 999);
     }
+
+    protected virtual void Update()
+    {
+        if(controller == null)
+        {
+            MoveVector = CamVector = Vector3.zero;
+        }
+    }
     public void UpdateMoveVector(Vector3 move)
     {
         MoveVector = move;
