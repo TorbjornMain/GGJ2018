@@ -36,7 +36,7 @@ public class PlayerController : Controller {
         if (target.cam)
         {
             target.cam.enabled = true;
-            target.cam.GetComponent<AudioListener>().enabled = true;
+            //target.cam.GetComponent<AudioListener>().enabled = true;
         }
         
     }
@@ -47,7 +47,7 @@ public class PlayerController : Controller {
             if (posessedPawn.cam)
             {
                 posessedPawn.cam.enabled = false;
-                posessedPawn.cam.GetComponent<AudioListener>().enabled = false;
+                //posessedPawn.cam.GetComponent<AudioListener>().enabled = false;
             }
         }
         base.unposessPawn();
