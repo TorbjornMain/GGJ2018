@@ -12,9 +12,12 @@ public class SnapNode : MonoBehaviour
         {
             if (!snappedObjects.Contains(other.gameObject))
             {
-                other.transform.position = snapLocation.position;
-                other.transform.rotation = snapLocation.rotation;
+                //other.transform.position = snapLocation.position;
+                //other.transform.rotation = snapLocation.rotation
                 snappedObjects.Add(other.gameObject);
+                snappedObjects[0].GetComponent<Rigidbody>().isKinematic = true;
+                LeanTween.rotate(other.gameObject, snapLocation.eulerAngles, 0.3f);
+                LeanTween.move(other.gameObject, snapLocation.position, 1).setOnComplete(MakeKin);
             }
         }
     }
@@ -24,5 +27,10 @@ public class SnapNode : MonoBehaviour
         {
             snappedObjects.Remove(other.gameObject);
         }
+    }
+
+    void MakeKin()
+    {
+        snappedObjects[0].GetComponent<Rigidbody>().isKinematic = false;
     }
 }
