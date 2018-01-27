@@ -84,7 +84,8 @@ public class ForkLiftControl : Pawn
             holding = pickUpAble.gameObject;
             holdingMass = holding.GetComponent<Rigidbody>().mass;
             Destroy(holding.GetComponent<Rigidbody>());
-            holding.transform.position += holding.transform.up * .01f;
+            holding.transform.position = parentingPoint.position;
+            holding.transform.rotation = parentingPoint.rotation;
             holding.transform.parent = parentingPoint;
         }
         else if (holding)
