@@ -6,36 +6,40 @@ public class RoombaControl : Pawn
 {
     public float turnRate = 1;
     Rigidbody rb;
-    public float moveSpeed;
+    public float moveSpeed = 5;
+    public float slopeLimit = 15;
     bool grounded;
+    public Vector3 rayNode;
     // Use this for initialization
     protected override void Start()
     {
         base.Start();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        rb.useGravity = false;
+        rb.isKinematic = false;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    protected override void Update()
     {
-        if (grounded)
+        base.Update();
+        RaycastHit rc = new RaycastHit();
+        Vector3 diagonalForward = transform.rotation * new Vector3(0, -1, Mathf.Sign(MoveVector.z)*moveSpeed/2).normalized;
+        rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, CamVector.y * Time.deltaTime * turnRate, 0)));
+        if (Physics.Raycast(transform.TransformPoint(rayNode * Mathf.Sign(MoveVector.z)), diagonalForward, out rc, Mathf.Abs(MoveVector.z)))
         {
-            rb.transform.Rotate(0, MoveVector.x * turnRate * Time.deltaTime, 0);
-            Vector3 targetVelocity = new Vector3(0, 0, MoveVector.z);
-            targetVelocity = transform.TransformDirection(targetVelocity);
-            targetVelocity *= moveSpeed;
-            Vector3 velocity = rb.velocity;
-            Vector3 velocityChange = (targetVelocity - velocity);
-            velocityChange.x = Mathf.Clamp(velocityChange.x, -10, 10);
-            velocityChange.z = Mathf.Clamp(velocityChange.z, -10, 10);
-            velocityChange.y = 0;
-            rb.AddForce(velocityChange, ForceMode.VelocityChange);
+            
+            if (Vector3.Dot(rc.normal, Vector3.up) > Mathf.Cos(15 * Mathf.Deg2Rad))
+            {
+                if (Mathf.Abs(MoveVector.z) > 0)
+                {
+                    transform.rotation *= Quaternion.FromToRotation(transform.up, rc.normal);
+                    
+                    rb.MovePosition(transform.position + transform.forward * MoveVector.z * moveSpeed * Time.deltaTime);
+                    
+                }
+            }
         }
-        rb.AddForce(new Vector3(0, -9.8f * rb.mass, 0));
-
-        grounded = false;
     }
     void OnCollisionStay(Collision collision)
     {

@@ -2,11 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ForkLiftControl : Pawn
+public class ForkLiftControl : RoombaControl
 {
-    public List<AxleInfo> axleInfos; // the information about each individual axle
-    public float maxMotorTorque; // maximum torque the motor can apply to wheel
-    public float maxSteeringAngle; // maximum steer angle the wheel can have
+
     public Transform centerOfMass;
     List<Collider> ProngsTouching = new List<Collider>();
     public Transform parentingPoint;
@@ -20,41 +18,20 @@ public class ForkLiftControl : Pawn
     protected override void Start()
     {
         base.Start();
-        axleInfos[0].leftWheel.ConfigureVehicleSubsteps(1, 15, 18);
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = centerOfMass.localPosition;
     }
-    public void FixedUpdate()
-    {
-        float motor = maxMotorTorque * MoveVector.z;
-        float steering = maxSteeringAngle * MoveVector.x;
 
-        foreach (AxleInfo axleInfo in axleInfos)
-        {
-            if (axleInfo.steering)
-            {
-                axleInfo.leftWheel.steerAngle = steering;
-                axleInfo.rightWheel.steerAngle = steering;
-            }
-            if (axleInfo.motor)
-            {
-                axleInfo.leftWheel.motorTorque = motor;
-                axleInfo.rightWheel.motorTorque = motor;
-            }
-            axleInfo.leftWheel.brakeTorque = maxMotorTorque - Mathf.Abs(motor);
-            axleInfo.rightWheel.brakeTorque = maxMotorTorque - Mathf.Abs(motor);
-        }
-
-    }
     protected override void Update()
     {
-        float newY = fork.transform.localPosition.y + CamVector.x * forkSpeed * Time.deltaTime;
+        base.Update();
+        float newY = fork.transform.localPosition.y + scrollAmount * forkSpeed * Time.deltaTime;
         if (newY > forkLow && newY < forkHigh)
         {
             fork.transform.localPosition = new Vector3(fork.transform.localPosition.x, newY, fork.transform.localPosition.z);
         }
-
-
+        base.Update();
+        scrollAmount = 0;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -84,8 +61,10 @@ public class ForkLiftControl : Pawn
             holding = pickUpAble.gameObject;
             holdingMass = holding.GetComponent<Rigidbody>().mass;
             Destroy(holding.GetComponent<Rigidbody>());
-            holding.transform.position = parentingPoint.position;
-            holding.transform.rotation = parentingPoint.rotation;
+            //holding.transform.position = parentingPoint.position;
+            LeanTween.move(holding, parentingPoint.position, 0.5f);
+            LeanTween.rotate(holding, parentingPoint.eulerAngles, 0.2f);
+            //holding.transform.rotation = parentingPoint.rotation;
             holding.transform.parent = parentingPoint;
         }
         else if (holding)
@@ -99,13 +78,4 @@ public class ForkLiftControl : Pawn
 
         }
     }
-}
-
-[System.Serializable]
-public class AxleInfo
-{
-    public WheelCollider leftWheel;
-    public WheelCollider rightWheel;
-    public bool motor; // is this wheel attached to motor?
-    public bool steering; // does this wheel apply steer angle?
 }

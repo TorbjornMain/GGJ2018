@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pawn : MonoBehaviour {
+public class Pawn : MonoBehaviour
+{
 
     public Vector3 MoveVector;
     public Vector3 CamVector;
@@ -10,7 +11,7 @@ public class Pawn : MonoBehaviour {
     public Camera cam;
     public int ID;
     public bool firing = false;
-
+    public float scrollAmount;
 
     protected virtual void Start()
     {
@@ -19,10 +20,11 @@ public class Pawn : MonoBehaviour {
 
     protected virtual void Update()
     {
-        if(controller == null)
+        if (controller == null)
         {
             MoveVector = CamVector = Vector3.zero;
-        }
+          
+        }      
     }
     public void UpdateMoveVector(Vector3 move)
     {
@@ -41,5 +43,9 @@ public class Pawn : MonoBehaviour {
     public virtual void OnFire1Release()
     {
         firing = false;
+    }
+    public virtual void OnMouseWheel(float amount)
+    {
+        scrollAmount = amount;
     }
 }

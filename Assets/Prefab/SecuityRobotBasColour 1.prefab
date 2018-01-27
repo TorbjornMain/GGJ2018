@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat:
   - {fileID: 4800000, guid: b8c57bbf2dc0b9840a1d29532c67500a, type: 3}
-  targetRes: {x: 640, y: 480}
+  targetRes: {x: 0, y: 0}
   textureFilterMode: 0
 --- !u!114 &114491450755250322
 MonoBehaviour:
@@ -364,8 +364,11 @@ MonoBehaviour:
   cam: {fileID: 20870469895487434}
   ID: 0
   firing: 0
+  scrollAmount: 0
   turnRate: 100
   moveSpeed: 3
+  slopeLimit: 15
+  rayNode: {x: 0, y: 0, z: 0}
   replacementShader: {fileID: 114229430865844220}
 --- !u!114 &114650066913797500
 MonoBehaviour:
