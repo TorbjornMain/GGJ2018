@@ -10,7 +10,9 @@ public class LevelManager : MonoBehaviour {
     {
         if(other.GetComponent<RoombaControl>().controller.tag == "Player")
         {
+            Debug.Log("YOU DID IT");
             SceneManager.LoadScene(SceneName);
+
         }
     }
 }
