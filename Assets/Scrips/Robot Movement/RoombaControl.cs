@@ -26,7 +26,9 @@ public class RoombaControl : Pawn
         RaycastHit rc = new RaycastHit();
         Vector3 diagonalForward = transform.rotation * new Vector3(0, -1, Mathf.Sign(MoveVector.z)*moveSpeed/2).normalized;
         rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, CamVector.y * Time.deltaTime * turnRate, 0)));
-        if (Physics.Raycast(transform.TransformPoint(rayNode * Mathf.Sign(MoveVector.z)), diagonalForward, out rc, Mathf.Abs(MoveVector.z)))
+        Vector3 rn = rayNode;
+        rn.z *= Mathf.Sign(MoveVector.z);
+        if (Physics.Raycast(transform.TransformPoint(rn), diagonalForward, out rc, Mathf.Abs(MoveVector.z)))
         {
             
             if (Vector3.Dot(rc.normal, Vector3.up) > Mathf.Cos(15 * Mathf.Deg2Rad))
