@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 124263669930970412}
   - component: {fileID: 81727066515316270}
   - component: {fileID: 114024857287620508}
+  - component: {fileID: 114540578269952838}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -241,6 +242,21 @@ MonoBehaviour:
   maxView: 10
   sensitivity: 3
   roomba: {fileID: 114585826323662800}
+--- !u!114 &114540578269952838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451294463756476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5552ec68eff3a4c9e5d9d3632b5bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat:
+  - {fileID: 4800000, guid: b8c57bbf2dc0b9840a1d29532c67500a, type: 3}
+  targetRes: {x: 640, y: 480}
+  textureFilterMode: 0
 --- !u!114 &114585826323662800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,9 +273,9 @@ MonoBehaviour:
   controller: {fileID: 0}
   cam: {fileID: 20150054793228476}
   ID: 0
+  firing: 0
   turnRate: 100
   moveSpeed: 1
-  fallSpeed: 0
 --- !u!114 &114774799033851010
 MonoBehaviour:
   m_ObjectHideFlags: 1

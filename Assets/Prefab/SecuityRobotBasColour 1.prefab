@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 81388804212050308}
   - component: {fileID: 114650066913797500}
   - component: {fileID: 114229430865844220}
+  - component: {fileID: 114420633375971632}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -233,6 +234,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReplacementShader: {fileID: 4800000, guid: a15867c7ea30e714ca144f284b065669, type: 3}
   shaderActive: 0
+--- !u!114 &114420633375971632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530442755554958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5552ec68eff3a4c9e5d9d3632b5bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat:
+  - {fileID: 4800000, guid: b8c57bbf2dc0b9840a1d29532c67500a, type: 3}
+  targetRes: {x: 640, y: 480}
+  textureFilterMode: 0
 --- !u!114 &114491450755250322
 MonoBehaviour:
   m_ObjectHideFlags: 1

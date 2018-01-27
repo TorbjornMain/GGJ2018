@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 92689465596653290}
   - component: {fileID: 124611223018765028}
   - component: {fileID: 81672300691567794}
+  - component: {fileID: 114137094002012678}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -230,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404841557180160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.443, y: 0.648, z: -0.842}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4976790805336456}
@@ -547,6 +548,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114137094002012678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1238622118341078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5552ec68eff3a4c9e5d9d3632b5bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat:
+  - {fileID: 4800000, guid: b8c57bbf2dc0b9840a1d29532c67500a, type: 3}
+  targetRes: {x: 640, y: 480}
+  textureFilterMode: 0
 --- !u!114 &114141747183426862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,6 +607,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   cam: {fileID: 20982621028237222}
   ID: 0
+  firing: 0
   axleInfos:
   - leftWheel: {fileID: 146206865369762794}
     rightWheel: {fileID: 146146421084061206}
