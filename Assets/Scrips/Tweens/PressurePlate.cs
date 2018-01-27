@@ -13,7 +13,7 @@ public class PressurePlate : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.tag == "Moveable" || collision.gameObject.tag == "Robot")
         {
