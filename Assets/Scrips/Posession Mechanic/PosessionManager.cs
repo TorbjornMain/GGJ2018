@@ -78,7 +78,7 @@ public class PosessionManager : MonoBehaviour {
                                     }
                                     WidgetPositions.Add(wp);
                                 }
-                                else if(rc.collider.gameObject == item.gameObject)
+                                else if(rc.collider.transform.root.gameObject == item.gameObject)
                                 {
                                     UIWidgetPosition wp = new UIWidgetPosition();
                                     wp.ID = item.ID;
@@ -112,7 +112,7 @@ public class PosessionManager : MonoBehaviour {
                                 }
                                 WidgetPositions.Add(wp);
                             }
-                            else if (rc.collider.gameObject == item.gameObject)
+                            else if (rc.collider.transform.root.gameObject == item.gameObject)
                             {
                                 UIWidgetPosition wp = new UIWidgetPosition();
                                 wp.ID = item.ID;
