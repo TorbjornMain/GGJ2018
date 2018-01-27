@@ -900,6 +900,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   cam: {fileID: 698225066}
   ID: 0
+  firing: 0
   maxPitch: 50
   minPitch: -10
   maxYaw: 65
@@ -2430,10 +2431,6 @@ Prefab:
     - target: {fileID: 1368455572885232, guid: 9ad5fa560093c4441b2818abff499b9e, type: 2}
       propertyPath: m_Name
       value: OverlayCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1368455572885232, guid: 9ad5fa560093c4441b2818abff499b9e, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ad5fa560093c4441b2818abff499b9e, type: 2}

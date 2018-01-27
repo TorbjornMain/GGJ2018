@@ -7,15 +7,18 @@ public class PosessionUIManager : MonoBehaviour {
     List<PosessionWidget> widgets;
     public PosessionWidget widgetPrefab;
     PosessionManager pm;
+    PlayerController pc;
     RectTransform r;
     public Color posessableColour = Color.green;
     public Color nonPosessableColour = Color.red;
     public AnimationCurve distanceScaleCurve;
     public float distanceScale = 100.0f;
-
+    Canvas c;
     void Start()
     {
+        c = GetComponent<Canvas>();
         pm = FindObjectOfType<PosessionManager>();
+        pc = pm.GetComponent<PlayerController>();
         r = GetComponent<RectTransform>();
         widgets = new List<PosessionWidget>();
         foreach (var item in pm.levelPawns)
@@ -30,8 +33,17 @@ public class PosessionUIManager : MonoBehaviour {
     {
         if (pm.WidgetPositions == null)
             return;
-        for(int i = 0; i < pm.WidgetPositions.Count; i++)
+
+        if (pc.posessedPawn)
         {
+            if(pc.posessedPawn.cam)
+            {
+                c.worldCamera = pc.posessedPawn.cam;
+                c.planeDistance = 0.05f;
+            }
+        }
+        for(int i = 0; i < pm.WidgetPositions.Count; i++)
+        { 
             widgets[i].gameObject.SetActive(true);
             Vector2 viewportPosToScreenPos = new Vector2((pm.WidgetPositions[i].screenSpacePosition.x * r.sizeDelta.x) - (r.sizeDelta.x * 0.5f), (pm.WidgetPositions[i].screenSpacePosition.y * r.sizeDelta.y) - (r.sizeDelta.y * 0.5f));
             widgets[i].image.rectTransform.localPosition = viewportPosToScreenPos;
