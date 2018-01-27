@@ -46,9 +46,9 @@ public class ForkLiftControl : Pawn
         }
 
     }
-    public void Update()
+    protected override void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (firing)
         {
             if (pickUpAble && !holding)
             {

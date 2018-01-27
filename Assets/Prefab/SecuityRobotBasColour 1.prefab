@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95516984695068790}
   - component: {fileID: 54669688546184400}
   - component: {fileID: 65362030079529158}
-  - component: {fileID: 114085107814419264}
+  - component: {fileID: 114491450755250322}
   m_Layer: 0
   m_Name: SecuityRobotBasColour 1
   m_TagString: Untagged
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 92281025272019800}
   - component: {fileID: 81388804212050308}
   - component: {fileID: 114650066913797500}
+  - component: {fileID: 114229430865844220}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -219,7 +220,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114085107814419264
+--- !u!114 &114229430865844220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530442755554958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6ba6ad0d8132a42a5f5d3ce8269964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReplacementShader: {fileID: 4800000, guid: a15867c7ea30e714ca144f284b065669, type: 3}
+  shaderActive: 0
+--- !u!114 &114491450755250322
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -227,7 +241,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1427694065188550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71abd88adeb90d448a67b2c52a79daa9, type: 3}
+  m_Script: {fileID: 11500000, guid: a9b5096f9dfb98e4d8917cc1a3c307c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MoveVector: {x: 0, y: 0, z: 0}
@@ -235,9 +249,10 @@ MonoBehaviour:
   controller: {fileID: 0}
   cam: {fileID: 20870469895487434}
   ID: 0
+  firing: 0
   turnRate: 100
   moveSpeed: 3
-  fallSpeed: 0
+  replacementShader: {fileID: 114229430865844220}
 --- !u!114 &114650066913797500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,7 +267,7 @@ MonoBehaviour:
   minView: -51
   maxView: 31
   sensitivity: 1
-  roomba: {fileID: 114085107814419264}
+  roomba: {fileID: 114491450755250322}
 --- !u!124 &124859000222380194
 Behaviour:
   m_ObjectHideFlags: 1
