@@ -9,9 +9,9 @@ public class MenuController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         masterMixer = Resources.Load("AudioMixer") as AudioMixer;
-        SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume", 1));
-        SetEffectsVolume(PlayerPrefs.GetFloat("EffectsVolume", 1));
-        SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume", 1));
+        SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume", 0.5f));
+        SetEffectsVolume(PlayerPrefs.GetFloat("EffectsVolume", 0.5f));
+        SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume", 0.5f));
         if (mainMenu != null)
         {
             mainMenu.SetActive(false);

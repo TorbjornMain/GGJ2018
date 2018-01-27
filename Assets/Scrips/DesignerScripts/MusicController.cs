@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// number % divisor = remainder; 5 % 3 = 2; i % array.length = 0 - array length - 1 
 
 public class MusicController : MonoBehaviour {
 
@@ -10,10 +9,12 @@ public class MusicController : MonoBehaviour {
 
     public AudioClip[] musicClips;
     public AudioSource[] source;
+    private AudioListener listener;
     private int currentClip=0;
     private int clipPos=0;
     private int currentSource = 0;
     private bool fadingOut;
+    private PlayerController player;
 
 
     private void Awake()
@@ -27,14 +28,24 @@ public class MusicController : MonoBehaviour {
         {
             Destroy(this);
         }
+        player = FindObjectOfType<PlayerController>();
+        listener = GetComponent<AudioListener>();
         source = GetComponents<AudioSource>();
         source[currentSource].clip = musicClips[currentClip];
         source[currentSource].Play();
-
+        foreach (AudioListener aud in FindObjectsOfType<AudioListener>())
+        {
+            if (aud != listener)
+            {
+                aud.enabled = false;
+            }
+        }
     }
+
 	
 	// Update is called once per frame
 	void Update () {
+        transform.position = player.posessedPawn.transform.position;
         if (!fadingOut)
         {
             if (source[currentSource].time > musicClips[currentClip].length - 5)
