@@ -8,11 +8,11 @@ public class LevelManager : MonoBehaviour {
     // Use this for initialization
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<RoombaControl>().controller.tag == "Player")
+        Debug.Log(other.name);
+        if(other.tag == "Robot" && FindObjectOfType<PlayerController>().posessedPawn.gameObject==other.gameObject)
         {
             Debug.Log("YOU DID IT");
             SceneManager.LoadScene(SceneName);
-
         }
     }
 }
