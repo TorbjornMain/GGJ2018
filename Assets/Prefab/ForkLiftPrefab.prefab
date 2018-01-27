@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 114242239304260458}
   m_Layer: 0
   m_Name: ForkLiftPrefab
-  m_TagString: Untagged
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1512240359792264}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c08a00b07aa4e454b9a3cf43658baad5, type: 3}
   m_Name: 
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1512240359792264}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c08a00b07aa4e454b9a3cf43658baad5, type: 3}
   m_Name: 
@@ -750,23 +750,16 @@ MonoBehaviour:
   ID: 0
   firing: 0
   scrollAmount: 0
-  axleInfos:
-  - leftWheel: {fileID: 146841358367105946}
-    rightWheel: {fileID: 146569163215789322}
-    motor: 1
-    steering: 1
-  - leftWheel: {fileID: 146321174051485774}
-    rightWheel: {fileID: 146854097171593972}
-    motor: 0
-    steering: 0
-  maxMotorTorque: 200
-  maxSteeringAngle: 20
+  turnRate: 40
+  moveSpeed: 5
+  slopeLimit: 15
+  rayNode: {x: 0, y: 0, z: 0.3}
   centerOfMass: {fileID: 4347814000546058}
   parentingPoint: {fileID: 4928959727763062}
   fork: {fileID: 1934036420747586}
   forkLow: 0.398
   forkHigh: 1.203
-  forkSpeed: 1
+  forkSpeed: 20
 --- !u!124 &124474448769438506
 Behaviour:
   m_ObjectHideFlags: 1

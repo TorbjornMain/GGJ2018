@@ -11,7 +11,6 @@ public class MusicController : MonoBehaviour {
     public AudioSource[] source;
     private AudioListener listener;
     private int currentClip=0;
-    private int clipPos=0;
     private int currentSource = 0;
     private bool fadingOut;
     private PlayerController player;
