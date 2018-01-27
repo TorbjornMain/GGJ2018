@@ -53,8 +53,6 @@ public class ForkLiftControl : Pawn
         {
             fork.transform.localPosition = new Vector3(fork.transform.localPosition.x, newY, fork.transform.localPosition.z);
         }
-
-
     }
     void OnTriggerEnter(Collider other)
     {
