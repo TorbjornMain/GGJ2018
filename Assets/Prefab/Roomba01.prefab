@@ -900,7 +900,7 @@ MonoBehaviour:
   turnRate: 100
   moveSpeed: 1
   slopeLimit: 15
-  rayNode: {x: 0, y: 0.21, z: 0.1}
+  rayNode: {x: 0, y: 0.06, z: 0.11}
 --- !u!114 &114774799033851010
 MonoBehaviour:
   m_ObjectHideFlags: 0

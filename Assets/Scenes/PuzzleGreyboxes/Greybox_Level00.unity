@@ -1710,10 +1710,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4815826718617502, guid: 7df0112452e9b6c48b278a6d1ec65065, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -1.7120001
-      objectReference: {fileID: 0}
     - target: {fileID: 1904228109333906, guid: 7df0112452e9b6c48b278a6d1ec65065, type: 2}
       propertyPath: m_Name
       value: Roomba01_01
@@ -1723,20 +1719,6 @@ Prefab:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1157802757}
-    - target: {fileID: 1904228109333906, guid: 7df0112452e9b6c48b278a6d1ec65065, type: 2}
-      propertyPath: m_TagString
-      value: Robot
-      objectReference: {fileID: 0}
-    - target: {fileID: 114585826323662800, guid: 7df0112452e9b6c48b278a6d1ec65065,
-        type: 2}
-      propertyPath: rayNode.z
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 54859360073945960, guid: 7df0112452e9b6c48b278a6d1ec65065,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7df0112452e9b6c48b278a6d1ec65065, type: 2}
   m_IsPrefabParent: 0
