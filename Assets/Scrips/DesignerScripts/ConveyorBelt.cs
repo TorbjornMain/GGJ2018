@@ -7,24 +7,28 @@ public class ConveyorBelt : MonoBehaviour {
     public Vector3 direction;
     public float speed;
     private Renderer rend;
-    private float offset;
+    private Vector2 offset;
+    private Vector2 tiling;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag=="Robot" || other.tag == "Moveable")
         {
-            other.gameObject.transform.Translate(direction*Time.deltaTime*speed);
+            other.gameObject.transform.Translate(direction*Time.deltaTime*speed,Space.Self);
         }
     }
 
     private void Start()
     {
-        rend = GetComponent<Renderer>();    
+        rend = GetComponent<Renderer>();
+        tiling = rend.material.GetTextureScale("_MainTex");
+        Debug.Log(tiling);
     }
 
     private void Update()
     {
-        offset += Time.deltaTime * speed / Vector3.Project(rend.bounds.extents, direction.normalized).magnitude /*the half is because the belt indicator's tiling is x2 */;
-        rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+        offset.x += Time.deltaTime * speed * direction.x / tiling.x / Vector3.Project(rend.bounds.extents, direction.normalized).magnitude /*the half is because the belt indicator's tiling is x2 */;
+        offset.y += Time.deltaTime * speed * direction.z / tiling.y/ Vector3.Project(rend.bounds.extents, direction.normalized).magnitude;
+        rend.material.SetTextureOffset("_MainTex", new Vector2(offset.x, offset.y));
     }
 }
