@@ -45,7 +45,10 @@ public class MusicController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = player.posessedPawn.transform.position;
+        if (player.posessedPawn != null)
+        {
+            transform.position = player.posessedPawn.transform.position;
+        }
         if (!fadingOut)
         {
             if (source[currentSource].time > musicClips[currentClip].length - 5)
