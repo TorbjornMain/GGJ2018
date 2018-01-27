@@ -7,7 +7,6 @@ public class RoombaControl : Pawn
     public float turnRate = 1;
     Rigidbody rb;
     public float moveSpeed;
-    public float fallSpeed;
     bool grounded;
     // Use this for initialization
     protected override void Start()
