@@ -47,8 +47,8 @@
 				float2 uvOff = float2(Random(dot(processedUV, processedUV) + _Time.w), Random(dot(processedUV, processedUV) + 90 + _Time.w));
 				uvOff = float2(Random(_Time.w * 1000 + i.uv.y * 30), 0);
 				fixed4 col = tex2D(_MainTex, i.uv);
-				col += tex2D(_MainTex, i.uv + uvOff * 0.005) * 0.01f;
-				col += tex2D(_MainTex, i.uv - uvOff * 0.005) * 0.01f;
+				col += tex2D(_MainTex, i.uv + uvOff * 0.01) * 0.03f;
+				col += tex2D(_MainTex, i.uv - uvOff * 0.01) * 0.03f;
 
 				// just invert the colors
 				return col;
