@@ -17,8 +17,12 @@ public class CameraPawn : Pawn {
 
     // Update is called once per frame
     void Update () {
+        CamVector.x *= -1;
+
         addAng += CamVector * Time.deltaTime * sensitivity;
-        addAng.x *= -1;
+
+        addAng.x = Mathf.Clamp(addAng.x, minPitch, maxPitch);
+        addAng.y = Mathf.Clamp(addAng.y, minYaw, maxYaw);
         transform.rotation = Quaternion.Euler(baseAng + addAng);
 	}
 }
