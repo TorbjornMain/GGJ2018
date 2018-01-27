@@ -42,9 +42,20 @@ public class MusicController : MonoBehaviour {
         }
     }
 
-	
-	// Update is called once per frame
-	void Update () {
+    private void OnLevelWasLoaded(int level)
+    {
+        foreach (AudioListener aud in FindObjectsOfType<AudioListener>())
+        {
+            if (aud != listener)
+            {
+                aud.enabled = false;
+            }
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update () {
         if (player.posessedPawn != null)
         {
             transform.position = player.posessedPawn.transform.position;
