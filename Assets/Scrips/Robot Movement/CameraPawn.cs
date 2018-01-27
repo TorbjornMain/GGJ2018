@@ -18,6 +18,7 @@ public class CameraPawn : Pawn {
     // Update is called once per frame
     void Update () {
         addAng += CamVector * Time.deltaTime * sensitivity;
+        addAng.x *= -1;
         transform.rotation = Quaternion.Euler(baseAng + addAng);
 	}
 }
