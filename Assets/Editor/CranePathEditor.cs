@@ -19,16 +19,24 @@ public class CranePathEditor : Editor
             }
         }
 
+        Event evt = Event.current;
+        Rect contextRect = new Rect(10, 10, 100, 100);
+        if (evt.type == EventType.ContextClick)
+        {
+            Vector2 mousePos = evt.mousePosition;
+            if (contextRect.Contains(mousePos))
+            {
+                EditorUtility.DisplayPopupMenu(new Rect(mousePos.x, mousePos.y, 0, 0), "Assets/", null);
+                evt.Use();
+            }
+        }
+
+
     }
 
     public override void OnInspectorGUI()
     {
-        var path = (CranePath)target;
-        if (GUILayout.Button("Add Node"))
-        {
-            path.nodes.Add(new Node() { position = path.nodes.Count > 0 ? path.nodes[path.nodes.Count - 1].position : Vector3.zero });
-        }
-        DrawDefaultInspector();
+      
     }
 
 }
