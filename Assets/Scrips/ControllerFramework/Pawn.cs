@@ -7,6 +7,13 @@ public class Pawn : MonoBehaviour {
     public Vector3 MoveVector;
     public Vector3 CamVector;
     public Controller controller;
+    public Camera cam;
+    public int ID;
+
+    protected virtual void Start()
+    {
+        ID = Random.Range(0, 999);
+    }
     public void UpdateMoveVector(Vector3 move)
     {
         MoveVector = move;
@@ -15,5 +22,10 @@ public class Pawn : MonoBehaviour {
     public void UpdateCamVector(Vector3 cam)
     {
         CamVector = cam;
+    }
+
+    public virtual void OnFire1()
+    {
+
     }
 }

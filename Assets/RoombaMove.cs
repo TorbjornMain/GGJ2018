@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoombaMove : MonoBehaviour
 {
     public float minView, maxView, sensitivity;
+    public Pawn roomba;
     // Use this for initialization
     void Start()
     {
@@ -14,7 +15,7 @@ public class RoombaMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float rotation = Input.GetAxis("Mouse Y") * sensitivity;
+        float rotation = roomba.CamVector.x * sensitivity;
         if (WrapAngle(transform.eulerAngles.x - rotation) > minView && WrapAngle(transform.eulerAngles.x - rotation) < maxView)
             transform.Rotate(Vector3.right, -rotation, Space.Self);
 
