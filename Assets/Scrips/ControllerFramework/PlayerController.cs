@@ -2,24 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : Controller {
+public class PlayerController : Controller
+{
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
         if (posessedPawn != null)
         {
             posessedPawn.UpdateMoveVector(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
             posessedPawn.UpdateCamVector(new Vector3(Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0));
-            if(Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2"))
             {
                 SendMessage("DoPosess");
             }
-            if(Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 posessedPawn.OnFire1Pressed();
             }
@@ -27,9 +29,9 @@ public class PlayerController : Controller {
             {
                 posessedPawn.OnFire1Release();
             }
-            if(Input.GetAxisRaw("Mouse ScrollWheel") != 0)
+            if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
             {
-
+                posessedPawn.OnMouseWheel(Input.GetAxisRaw("Mouse ScrollWheel"));
             }
         }
     }
@@ -42,7 +44,7 @@ public class PlayerController : Controller {
             target.cam.enabled = true;
             //target.cam.GetComponent<AudioListener>().enabled = true;
         }
-        
+
     }
     protected override void unposessPawn()
     {
@@ -55,6 +57,6 @@ public class PlayerController : Controller {
             }
         }
         base.unposessPawn();
-        
+
     }
 }

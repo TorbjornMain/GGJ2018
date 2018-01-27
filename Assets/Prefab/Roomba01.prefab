@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 33696362093589576}
   - component: {fileID: 23869876820307936}
   - component: {fileID: 64879811355298984}
-  - component: {fileID: 114625025193585884}
+  - component: {fileID: 114774799033851010}
   m_Layer: 0
   m_Name: polySurface13
   m_TagString: Robot
@@ -263,8 +263,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1904228109333906}
-  m_LocalRotation: {x: -0, y: 0.080710515, z: -0, w: 0.9967376}
-  m_LocalPosition: {x: -4.06, y: 1.919, z: -3.599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.72249, y: 0.10525775, z: 2.4048455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4316381817059708}
@@ -753,7 +753,8 @@ AudioSource:
   m_GameObject: {fileID: 1904228109333906}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243219848568088140, guid: f4025733766683f4388c9cab864b99d9,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.1
@@ -876,7 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat:
   - {fileID: 4800000, guid: b8c57bbf2dc0b9840a1d29532c67500a, type: 3}
-  targetRes: {x: 640, y: 480}
+  targetRes: {x: 0, y: 0}
   textureFilterMode: 0
 --- !u!114 &114585826323662800
 MonoBehaviour:
@@ -895,13 +896,14 @@ MonoBehaviour:
   cam: {fileID: 20150054793228476}
   ID: 0
   firing: 0
+  scrollAmount: 0
   turnRate: 100
   moveSpeed: 1
   slopeLimit: 15
-  rayNode: {x: 0, y: 0, z: 0}
+  rayNode: {x: 0, y: 0.03, z: 0.1}
 --- !u!114 &114774799033851010
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821656352591350}

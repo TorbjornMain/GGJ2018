@@ -561,7 +561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat:
   - {fileID: 4800000, guid: b8c57bbf2dc0b9840a1d29532c67500a, type: 3}
-  targetRes: {x: 640, y: 480}
+  targetRes: {x: 0, y: 0}
   textureFilterMode: 0
 --- !u!114 &114141747183426862
 MonoBehaviour:
@@ -608,17 +608,11 @@ MonoBehaviour:
   cam: {fileID: 20982621028237222}
   ID: 0
   firing: 0
-  axleInfos:
-  - leftWheel: {fileID: 146206865369762794}
-    rightWheel: {fileID: 146146421084061206}
-    motor: 1
-    steering: 1
-  - leftWheel: {fileID: 146059045861996248}
-    rightWheel: {fileID: 146481476854129432}
-    motor: 0
-    steering: 0
-  maxMotorTorque: 200
-  maxSteeringAngle: 20
+  scrollAmount: 0
+  turnRate: 40
+  moveSpeed: 5
+  slopeLimit: 15
+  rayNode: {x: 0, y: 0, z: 0.23}
   centerOfMass: {fileID: 4505983679230336}
   parentingPoint: {fileID: 4101730204065812}
   fork: {fileID: 1732901945611194}
