@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VentOpener : MonoBehaviour {
-
+    public Vector3 target;
 	void Trigger()
     {
-        LeanTween.rotate(gameObject, new Vector3(90, 0, 0), 1).setEaseInQuad();
+        LeanTween.rotate(gameObject, target, 1).setEaseInQuad();
     }
 }
