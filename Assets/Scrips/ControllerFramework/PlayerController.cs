@@ -27,6 +27,10 @@ public class PlayerController : Controller {
             {
                 posessedPawn.OnFire1Release();
             }
+            if(Input.GetAxisRaw("Mouse ScrollWheel") != 0)
+            {
+
+            }
         }
     }
 

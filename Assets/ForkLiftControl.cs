@@ -53,8 +53,6 @@ public class ForkLiftControl : Pawn
         {
             fork.transform.localPosition = new Vector3(fork.transform.localPosition.x, newY, fork.transform.localPosition.z);
         }
-
-
     }
     void OnTriggerEnter(Collider other)
     {
@@ -84,7 +82,10 @@ public class ForkLiftControl : Pawn
             holding = pickUpAble.gameObject;
             holdingMass = holding.GetComponent<Rigidbody>().mass;
             Destroy(holding.GetComponent<Rigidbody>());
-            holding.transform.position += holding.transform.up * .01f;
+            //holding.transform.position = parentingPoint.position;
+            LeanTween.move(holding, parentingPoint.position, 0.5f);
+            LeanTween.rotate(holding, parentingPoint.eulerAngles, 0.2f);
+            //holding.transform.rotation = parentingPoint.rotation;
             holding.transform.parent = parentingPoint;
         }
         else if (holding)
