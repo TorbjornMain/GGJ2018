@@ -5,10 +5,9 @@ using UnityEngine;
 public class RoombaControl : Pawn
 {
     public float turnRate = 1;
-    Rigidbody rb;
+   protected Rigidbody rb;
     public float moveSpeed = 5;
     public float slopeLimit = 15;
-    bool grounded;
     public Vector3 rayNode;
     // Use this for initialization
     protected override void Start()
@@ -24,39 +23,18 @@ public class RoombaControl : Pawn
     {
         base.Update();
         RaycastHit rc = new RaycastHit();
-        Vector3 diagonalForward = transform.rotation * new Vector3(0, -1, Mathf.Sign(MoveVector.z)*moveSpeed/2).normalized;
+        Vector3 diagonalForward = transform.rotation * new Vector3(0, -1, Mathf.Sign(MoveVector.z) * moveSpeed / 2).normalized;
         rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, CamVector.y * Time.deltaTime * turnRate, 0)));
         if (Physics.Raycast(transform.TransformPoint(rayNode * Mathf.Sign(MoveVector.z)), diagonalForward, out rc, Mathf.Abs(MoveVector.z)))
         {
-            
             if (Vector3.Dot(rc.normal, Vector3.up) > Mathf.Cos(15 * Mathf.Deg2Rad))
             {
                 if (Mathf.Abs(MoveVector.z) > 0)
                 {
                     transform.rotation *= Quaternion.FromToRotation(transform.up, rc.normal);
-                    
                     rb.MovePosition(transform.position + transform.forward * MoveVector.z * moveSpeed * Time.deltaTime);
-                    
                 }
             }
         }
-    }
-    void OnCollisionStay(Collision collision)
-    {
-        grounded = true;
-        //float yRot = transform.eulerAngles.y;
-
-        //Vector3 normal = new Vector3();
-        //foreach (var point in collision.contacts)
-        //{
-        //    normal += point.normal;
-        //}
-        //normal /= collision.contacts.Length;
-        ////transform.rotation = Quaternion.LookRotation(Vector3.Cross(transform.right, normal));
-        //RaycastHit hit2;
-        //if (Physics.Raycast(transform.position, -(transform.up), out hit2))
-        //{
-        //    transform.rotation = Quaternion.LookRotation(Vector3.Cross(transform.right, hit2.normal));
-        //}
     }
 }

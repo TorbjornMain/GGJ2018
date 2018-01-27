@@ -11,19 +11,20 @@ public class ForkLiftControl : RoombaControl
     Rigidbody pickUpAble;
     GameObject holding;
     float holdingMass;
-    Rigidbody rb;
     public GameObject fork;
     public float forkLow = 0.379f, forkHigh = 1.203f;
     public float forkSpeed = 1f;
+    bool loading = false;
     protected override void Start()
     {
-        base.Start();
-        rb = GetComponent<Rigidbody>();
+        base.Start();     
         rb.centerOfMass = centerOfMass.localPosition;
     }
 
     protected override void Update()
     {
+        if (loading)
+            return;
         base.Update();
         float newY = fork.transform.localPosition.y + scrollAmount * forkSpeed * Time.deltaTime;
         if (newY > forkLow && newY < forkHigh)
@@ -62,10 +63,10 @@ public class ForkLiftControl : RoombaControl
             holdingMass = holding.GetComponent<Rigidbody>().mass;
             Destroy(holding.GetComponent<Rigidbody>());
             //holding.transform.position = parentingPoint.position;
-            LeanTween.move(holding, parentingPoint.position, 0.5f);
+            LeanTween.move(holding, parentingPoint.position, 0.5f).setOnComplete(TweenDone);
             LeanTween.rotate(holding, parentingPoint.eulerAngles, 0.2f);
+            loading = true;
             //holding.transform.rotation = parentingPoint.rotation;
-            holding.transform.parent = parentingPoint;
         }
         else if (holding)
         {
@@ -77,5 +78,10 @@ public class ForkLiftControl : RoombaControl
             holding = null;
 
         }
+    }
+    void TweenDone()
+    {
+        loading = false;
+        holding.transform.parent = parentingPoint;
     }
 }

@@ -15,8 +15,8 @@ public class PlayerController : Controller
     {
         if (posessedPawn != null)
         {
-            posessedPawn.UpdateMoveVector(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
-            posessedPawn.UpdateCamVector(new Vector3(Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0));
+            posessedPawn.UpdateMoveVector(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")));
+            posessedPawn.UpdateCamVector(new Vector3(Input.GetAxisRaw("Mouse Y"), Input.GetAxisRaw("Mouse X"), 0));
             if (Input.GetButtonDown("Fire2"))
             {
                 SendMessage("DoPosess");
