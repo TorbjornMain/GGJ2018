@@ -48,28 +48,6 @@ public class ForkLiftControl : Pawn
     }
     protected override void Update()
     {
-        if (firing)
-        {
-            if (pickUpAble && !holding)
-            {
-                ProngsTouching.Clear();
-                holding = pickUpAble.gameObject;
-                holdingMass = holding.GetComponent<Rigidbody>().mass;
-                Destroy(holding.GetComponent<Rigidbody>());
-                holding.transform.position += holding.transform.up * .01f;
-                holding.transform.parent = parentingPoint;
-            }
-            else if (holding)
-            {
-                ProngsTouching.Clear();
-                holding.AddComponent(typeof(Rigidbody));
-                holding.GetComponent<Rigidbody>().mass = holdingMass;
-                holdingMass = 0;
-                holding.transform.parent = null;
-                holding = null;
-
-            }
-        }
         float newY = fork.transform.localPosition.y + CamVector.x * forkSpeed * Time.deltaTime;
         if (newY > forkLow && newY < forkHigh)
         {
@@ -95,6 +73,29 @@ public class ForkLiftControl : Pawn
         if (pickUpAble == other.GetComponent<Rigidbody>())
         {
             pickUpAble = null;
+        }
+    }
+    public override void OnFire1Pressed()
+    {
+        base.OnFire1Pressed();
+        if (pickUpAble && !holding)
+        {
+            ProngsTouching.Clear();
+            holding = pickUpAble.gameObject;
+            holdingMass = holding.GetComponent<Rigidbody>().mass;
+            Destroy(holding.GetComponent<Rigidbody>());
+            holding.transform.position += holding.transform.up * .01f;
+            holding.transform.parent = parentingPoint;
+        }
+        else if (holding)
+        {
+            ProngsTouching.Clear();
+            holding.AddComponent(typeof(Rigidbody));
+            holding.GetComponent<Rigidbody>().mass = holdingMass;
+            holdingMass = 0;
+            holding.transform.parent = null;
+            holding = null;
+
         }
     }
 }

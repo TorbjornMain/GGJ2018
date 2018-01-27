@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 82084625745599824}
   - component: {fileID: 82340682580329970}
   - component: {fileID: 114280395102590040}
+  - component: {fileID: 81300417541796196}
   m_Layer: 0
-  m_Name: MusicPlayer
+  m_Name: AudioController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,6 +43,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &81300417541796196
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1597553311378796}
+  m_Enabled: 1
 --- !u!82 &82084625745599824
 AudioSource:
   m_ObjectHideFlags: 1

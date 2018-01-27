@@ -18,12 +18,14 @@ public class ProceduralBleepBlooper : MonoBehaviour {
     public float TimeSeconds = 1;
     public float Delay = 3;
 
-    bool canAudio = true;
+    bool canAudio = false;
 	
     void Start()
     {
+        canAudio = false;
         AS = GetComponent<AudioSource>();
         p = GetComponent<Pawn>();
+        StartCoroutine(resetCanAudio());
     }
 
     void OnCollisionEnter(Collision c)
