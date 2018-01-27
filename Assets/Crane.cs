@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Crane : Pawn   
+using UnityEngine.AI;
+public class Crane : Pawn
 {
     public GameObject cranePart;
 
@@ -16,8 +16,11 @@ public class Crane : Pawn
     // Update is called once per frame
     void Update()
     {
-      //  var moveVec = MoveVector * Time.deltaTime;
-      //  cranePart.transform.position += moveVec;
- 
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(cranePart.transform.position + MoveVector * Time.deltaTime, out hit, 1, 0))
+        {
+            cranePart.GetComponent<NavMeshAgent>().nextPosition = cranePart.transform.position + MoveVector * Time.deltaTime;
+        }
+
     }
 }

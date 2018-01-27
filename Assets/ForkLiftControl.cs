@@ -25,11 +25,13 @@ public class ForkLiftControl : RoombaControl
     protected override void Update()
     {
         base.Update();
-        float newY = fork.transform.localPosition.y + CamVector.x * forkSpeed * Time.deltaTime;
+        float newY = fork.transform.localPosition.y + scrollAmount * forkSpeed * Time.deltaTime;
         if (newY > forkLow && newY < forkHigh)
         {
             fork.transform.localPosition = new Vector3(fork.transform.localPosition.x, newY, fork.transform.localPosition.z);
         }
+        base.Update();
+        scrollAmount = 0;
     }
     void OnTriggerEnter(Collider other)
     {

@@ -23,7 +23,8 @@ public class Pawn : MonoBehaviour
         if (controller == null)
         {
             MoveVector = CamVector = Vector3.zero;
-        }
+          
+        }      
     }
     public void UpdateMoveVector(Vector3 move)
     {
