@@ -63,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1427694065188550}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4355454, y: 0.4624671, z: 0.8561197}
+  m_LocalPosition: {x: 1.924, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4816603838912814}
@@ -177,7 +177,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &65362030079529158
@@ -365,10 +365,11 @@ MonoBehaviour:
   ID: 0
   firing: 0
   scrollAmount: 0
+  pawnType: Security
   turnRate: 100
-  moveSpeed: 3
+  moveSpeed: 5
   slopeLimit: 15
-  rayNode: {x: 0, y: 0, z: 0}
+  rayNode: {x: 0, y: -0.25, z: 0.11}
   replacementShader: {fileID: 114229430865844220}
 --- !u!114 &114650066913797500
 MonoBehaviour:
