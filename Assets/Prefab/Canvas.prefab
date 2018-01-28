@@ -517,7 +517,14 @@ MonoBehaviour:
     Left Click to pick up some objects'
   securityInstruction: 'WASD to move, mouse to look
 
-    Right click to transfer to a targeted bot'
+    Right click to transfer to a targeted bot
+
+    Left Click to see through some obstacles'
+  craneInstructions: 'WASD to move the crane claw, mouse to look
+
+    Right click to transfer to a targeted bot
+
+    Left click to pick up object under crane claw'
   defaultInstructions: 'WASD to move, mouse to look
 
     Right click to transfer to a targeted bot'

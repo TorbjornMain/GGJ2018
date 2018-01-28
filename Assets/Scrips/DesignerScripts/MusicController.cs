@@ -25,7 +25,7 @@ public class MusicController : MonoBehaviour {
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         player = FindObjectOfType<PlayerController>();
         listener = GetComponent<AudioListener>();
@@ -45,16 +45,23 @@ public class MusicController : MonoBehaviour {
     {
         foreach (AudioListener aud in FindObjectsOfType<AudioListener>())
         {
-            if (aud != listener)
+            if (aud != listener && aud.gameObject != instance.gameObject)
             {
                 aud.enabled = false;
             }
+            else
+            {
+                aud.enabled = true;
+            }
         }
+        player = FindObjectOfType<PlayerController>();
+
     }
 
 
     // Update is called once per frame
     void Update () {
+
         if (player.posessedPawn != null)
         {
             transform.position = player.posessedPawn.transform.position;

@@ -24,6 +24,9 @@ public class RobotInstructions : MonoBehaviour {
     public string securityInstruction;
 
     [TextArea(3, 10)]
+    public string craneInstructions;
+
+    [TextArea(3, 10)]
     public string defaultInstructions;
 
     private bool hiding;
@@ -67,6 +70,10 @@ public class RobotInstructions : MonoBehaviour {
         else if (pawn.pawnType == "Security")
         {
             text.text = securityInstruction;
+        }
+        else if (pawn.pawnType == "Crane")
+        {
+            text.text = craneInstructions;
         }
         else
         {

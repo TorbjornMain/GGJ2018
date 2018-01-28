@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 124474448769438506}
   - component: {fileID: 81286167125846486}
   - component: {fileID: 114846700555201016}
+  - component: {fileID: 114684332391582688}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -363,7 +364,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1512240359792264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.536, y: 0.829, z: -2.012}
+  m_LocalPosition: {x: 4.5346932, y: 1.95, z: 3.832217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4469555827555278}
@@ -746,6 +747,21 @@ MonoBehaviour:
   leftWheel: {fileID: 146841358367105946}
   rightWheel: {fileID: 146569163215789322}
   anitRoll: 2000
+--- !u!114 &114684332391582688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1909408122900084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec9a03f4f4378c44840e86996b11e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minView: -60
+  maxView: 60
+  sensitivity: 2
+  roomba: {fileID: 114973773019384250}
 --- !u!114 &114846700555201016
 MonoBehaviour:
   m_ObjectHideFlags: 1

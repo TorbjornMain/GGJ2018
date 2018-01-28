@@ -22,11 +22,14 @@ public class NodeEditor : EditorWindow
     {
         if (windowsToAttach.Count == 2)
         {
+           
+            Undo.RecordObject(currentGo, "connection");
             attachedWindows.Add(windowsToAttach[0]);
             attachedWindows.Add(windowsToAttach[1]);
             attachNodes[0].Connect(attachNodes[1]);
             windowsToAttach = new List<int>();
             attachNodes = new List<CraneNode>();
+            EditorUtility.SetDirty(currentGo);
         }
 
         if (attachedWindows.Count >= 2)

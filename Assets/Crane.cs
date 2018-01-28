@@ -47,7 +47,7 @@ public class Crane : Pawn
                     cranePart.transform.position += Vector3.right * MoveVector.x * speed * Time.deltaTime;
                     movedX = true;
                 }
-                else if (Mathf.Abs(cranePart.transform.position.z - closest.position.z) < tollerance && Vector3.Angle(Vector3.right * MoveVector.x, closest.position - cranePart.transform.position) < 10)
+                else if (Mathf.Abs(cranePart.transform.position.z - closest.position.z) < tollerance && Vector3.Angle(Vector3.right * MoveVector.x, closest.position - cranePart.transform.position) < 30)
                 {
                     cranePart.transform.position += Vector3.right * MoveVector.x * speed * Time.deltaTime;
                     movedX = true;
@@ -60,7 +60,7 @@ public class Crane : Pawn
                     cranePart.transform.position += Vector3.forward * MoveVector.z * speed * Time.deltaTime;
                     movedY = true;
                 }
-                else if (Mathf.Abs(cranePart.transform.position.x - closest.position.x) < tollerance && Vector3.Angle(Vector3.forward * MoveVector.z, closest.position - cranePart.transform.position) < 10)
+                else if (Mathf.Abs(cranePart.transform.position.x - closest.position.x) < tollerance && Vector3.Angle(Vector3.forward * MoveVector.z, (closest.position - cranePart.transform.position).normalized) < 30)
                 {
                     cranePart.transform.position += Vector3.forward * MoveVector.z * speed * Time.deltaTime;
                     movedY = true;
@@ -73,7 +73,7 @@ public class Crane : Pawn
         if (!holding && !loading)
         {
             RaycastHit hit;
-            if (Physics.SphereCast(cranePart.transform.position, .5f, -cranePart.transform.up, out hit))
+            if (Physics.SphereCast(cranePart.transform.position, .5f, -cranePart.transform.up * 1000, out hit))
             {
                 if (hit.rigidbody)
                 {
