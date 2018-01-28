@@ -24,7 +24,6 @@ public class FreeLookCamera : MonoBehaviour
         if (WrapAngle(transform.eulerAngles.y + rotation) > minViewY && WrapAngle(transform.eulerAngles.y + rotation) < maxViewY)
             transform.Rotate(Vector3.up, rotation, Space.Self);
         transform.eulerAngles = Vector3.Scale(transform.eulerAngles, new Vector3(1, 1, 0));
-
     }
     private static float WrapAngle(float angle)
     {
