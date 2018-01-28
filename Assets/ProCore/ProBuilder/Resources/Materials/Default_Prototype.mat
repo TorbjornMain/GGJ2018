@@ -7,12 +7,12 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Default_Prototype
-  m_Shader: {fileID: 4800000, guid: 3a6e79a67e3129f409bae52acc3ab06b, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_Shader: {fileID: 4800000, guid: 307c9ec5e567da346ac34aa7ab91ec81, type: 3}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -88,7 +88,9 @@ Material:
     - _DstBlend: 0
     - _EmissionScaleUI: 0
     - _Gloss: 0.5
+    - _GlossMapScale: 1
     - _Glossiness: 0.48
+    - _GlossyReflections: 1
     - _Lightmapping: 1
     - _Metallic: 0
     - _Mode: 0
@@ -96,6 +98,8 @@ Material:
     - _Parallax: 0.02
     - _Phase: 1
     - _Size: 25
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 1
     - _Wavelength: 0.17857142
@@ -108,4 +112,5 @@ Material:
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
     - _Indicator: {r: 1, g: 0, b: 0, a: 1}
+    - _RoboVisionColour: {r: 0, g: 0, b: 0, a: 0.3}
     - _SpecularColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
