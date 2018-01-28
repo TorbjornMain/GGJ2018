@@ -6,8 +6,7 @@ using UnityEngine.Serialization;
 public class CranePath : MonoBehaviour
 {
 
-    public List<Node> nodes = new List<Node>();
-    public List<PathNode> nodeConnections = new List<PathNode>();
+    public List<CraneNode> nodes = new List<CraneNode>();
     // Use this for initialization
     void Start()
     {
@@ -21,13 +20,20 @@ public class CranePath : MonoBehaviour
     }
 }
 [System.Serializable]
-public class Node
+public class CraneNode
 {
     public Vector3 position;
+    public List<Connection> connections = new List<Connection>();
+    public void Connect(CraneNode connection)
+    {
+        Vector3 connectDirection = (connection.position - position).normalized;
+        connections.Add(new Connection() { connected = connection, direction = connectDirection });
+        connection.connections.Add(new Connection() { connected = this, direction = -connectDirection });
+    }
 }
 [System.Serializable]
-
-public class PathNode
+public class Connection
 {
-    public Node start, end;
+    public Vector3 direction;
+    public CraneNode connected;
 }
