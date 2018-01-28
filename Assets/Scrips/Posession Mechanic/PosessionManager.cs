@@ -54,7 +54,24 @@ public class PosessionManager : MonoBehaviour
                 {
                     if (item == pc.posessedPawn)
                         continue;
-                    if (Vector3.Dot(camTransform.forward, (item.transform.position - camTransform.position).normalized) > Mathf.Cos(pc.posessedPawn.cam.fieldOfView * Mathf.Deg2Rad) && Vector3.Magnitude(item.transform.position - camTransform.position) < PosessionRange)
+                    if (item.tag == "Button")
+                    {
+                        RaycastHit rc = new RaycastHit();
+                        if (Physics.Raycast(camTransform.position, (item.transform.position - camTransform.position).normalized, out rc, (item.transform.position - camTransform.position).magnitude) && (rc.collider.transform.root.gameObject == item.gameObject))
+                        {
+                            UIWidgetPosition wp = new UIWidgetPosition();
+                            wp.ID = item.ID;
+                            wp.distance = (item.transform.position - camTransform.position).magnitude;
+                            wp.isPossessable = Vector3.Dot(camTransform.forward, (item.transform.position - camTransform.position).normalized) > Mathf.Cos(PosessionFOV * Mathf.Deg2Rad / 2);
+                            wp.screenSpacePosition = pc.posessedPawn.cam.WorldToViewportPoint(item.transform.position);
+                            WidgetPositions.Add(wp);
+                            if (wp.isPossessable && posess)
+                            {
+                                ((Button)item).Pressed();
+                            }
+                        }
+                    }
+                    else if (Vector3.Dot(camTransform.forward, (item.transform.position - camTransform.position).normalized) > Mathf.Cos(pc.posessedPawn.cam.fieldOfView * Mathf.Deg2Rad) && Vector3.Magnitude(item.transform.position - camTransform.position) < PosessionRange)
                     {
                         RaycastHit rc = new RaycastHit();
                         ReplacementShaderScript rp;
@@ -80,7 +97,6 @@ public class PosessionManager : MonoBehaviour
                 }
             }
         }
-
         posess = false;
     }
 
