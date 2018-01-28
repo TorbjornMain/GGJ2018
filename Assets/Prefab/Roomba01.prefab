@@ -1045,7 +1045,7 @@ MonoBehaviour:
   scrollAmount: 0
   pawnType: Roomba
   turnRate: 100
-  moveSpeed: 1
+  moveSpeed: 3
   slopeLimit: 15
   rayNode: {x: 0, y: 0.06, z: 0.11}
 --- !u!114 &114585923729163642

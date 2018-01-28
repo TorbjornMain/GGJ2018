@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class MenuController : MonoBehaviour {
+
     public AudioMixer masterMixer;
     public GameObject mainMenu;
     // Use this for initialization
@@ -24,6 +25,14 @@ public class MenuController : MonoBehaviour {
         if (Input.GetButtonDown("Cancel") && mainMenu != null)
         {
             mainMenu.SetActive(!mainMenu.activeInHierarchy);
+            if (mainMenu.activeInHierarchy)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
         }
     }
 

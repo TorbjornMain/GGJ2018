@@ -31,4 +31,9 @@ public class ConveyorBelt : MonoBehaviour {
         offset.x -= Time.deltaTime * speed * direction.z / tiling.y/ Vector3.Project(rend.bounds.extents, direction.normalized).magnitude;
         rend.material.SetTextureOffset("_MainTex", new Vector2(offset.x, offset.y));
     }
+    public void Trigger()
+    {
+        speed *= -1f;
+    }
+
 }
