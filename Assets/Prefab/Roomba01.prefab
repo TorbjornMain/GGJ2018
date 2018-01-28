@@ -1043,6 +1043,7 @@ MonoBehaviour:
   ID: 0
   firing: 0
   scrollAmount: 0
+  pawnType: Roomba
   turnRate: 100
   moveSpeed: 1
   slopeLimit: 15

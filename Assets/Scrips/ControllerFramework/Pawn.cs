@@ -12,6 +12,7 @@ public class Pawn : MonoBehaviour
     public int ID;
     public bool firing = false;
     public float scrollAmount;
+    public string pawnType;
 
     protected virtual void Start()
     {
