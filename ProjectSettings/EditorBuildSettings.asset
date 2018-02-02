@@ -6,26 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PuzzleGreyboxes/MenuScene.unity
-    guid: 3d86c4414dc3de244a9d36095771e4e7
-  - enabled: 1
-    path: Assets/Scenes/PuzzleGreyboxes/Greybox_Level00.unity
-    guid: 7bfce2074c0231147a3f6b59751c390e
-  - enabled: 1
-    path: Assets/Scenes/PuzzleGreyboxes/Greybox_Level01.unity
-    guid: b2f8084846a57a5408b05fbe9c580e04
-  - enabled: 1
-    path: Assets/Scenes/PuzzleGreyboxes/Greybox_Level02.unity
-    guid: d19d9c7cedb1f264085d86301d24d5af
-  - enabled: 1
-    path: Assets/Scenes/PuzzleGreyboxes/Greybox_Level03.unity
-    guid: 2a93ab907cfe4274fa3f8f4bf2663e7c
-  - enabled: 1
-    path: Assets/Scenes/PuzzleGreyboxes/Greybox_Level04.unity
-    guid: fa8b3dd3c521b0048a0d9fe8b88699f7
-  - enabled: 1
-    path: Assets/Scenes/PuzzleGreyboxes/Riley Greybox 1.unity
-    guid: 68217440e9e074e4ba3212e18632ad52
-  - enabled: 1
-    path: Assets/Scenes/PuzzleGreyboxes/SecurityBotLevel.unity
-    guid: c7e8b758be5382545a528a29dbb6b6a3
+    path: Assets/Scenes/TestingGrounds.unity
+    guid: 7f62374335adacc49b292e4870b2b15c
