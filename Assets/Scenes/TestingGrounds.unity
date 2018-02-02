@@ -125,8 +125,6 @@ GameObject:
   - component: {fileID: 113024955}
   - component: {fileID: 113024954}
   - component: {fileID: 113024953}
-  - component: {fileID: 113024952}
-  - component: {fileID: 113024951}
   m_Layer: 0
   m_Name: polySurface12
   m_TagString: Robot
@@ -148,32 +146,6 @@ Transform:
   m_Father: {fileID: 1750048960}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -95.979004, z: 0}
---- !u!114 &113024951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114090562765593430, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 113024949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
---- !u!114 &113024952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114998247033930106, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 113024949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
 --- !u!64 &113024953
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -430,7 +402,6 @@ GameObject:
   - component: {fileID: 278164407}
   - component: {fileID: 278164406}
   - component: {fileID: 278164405}
-  - component: {fileID: 278164404}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -451,21 +422,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &278164404
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 278164402}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &278164405
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -531,8 +487,6 @@ GameObject:
   - component: {fileID: 315715015}
   - component: {fileID: 315715014}
   - component: {fileID: 315715013}
-  - component: {fileID: 315715012}
-  - component: {fileID: 315715011}
   m_Layer: 0
   m_Name: polySurface10
   m_TagString: Robot
@@ -554,32 +508,6 @@ Transform:
   m_Father: {fileID: 1750048960}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &315715011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114649746754275626, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 315715009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
---- !u!114 &315715012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114486516751177966, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 315715009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
 --- !u!64 &315715013
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -747,8 +675,6 @@ GameObject:
   - component: {fileID: 848813159}
   - component: {fileID: 848813158}
   - component: {fileID: 848813157}
-  - component: {fileID: 848813156}
-  - component: {fileID: 848813155}
   m_Layer: 0
   m_Name: polySurface8
   m_TagString: Robot
@@ -770,32 +696,6 @@ Transform:
   m_Father: {fileID: 1750048960}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &848813155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114718020391556992, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 848813153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
---- !u!114 &848813156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114553547285090524, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 848813153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
 --- !u!64 &848813157
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -953,6 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17bbb180d758cc4cb7a5978dbe322e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StoredRobot: {fileID: 0}
 --- !u!4 &1242828256
 Transform:
   m_ObjectHideFlags: 0
@@ -978,8 +879,6 @@ GameObject:
   - component: {fileID: 1345630443}
   - component: {fileID: 1345630442}
   - component: {fileID: 1345630441}
-  - component: {fileID: 1345630440}
-  - component: {fileID: 1345630439}
   m_Layer: 0
   m_Name: polySurface9
   m_TagString: Robot
@@ -1001,32 +900,6 @@ Transform:
   m_Father: {fileID: 1750048960}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1345630439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114616764012259964, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1345630437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
---- !u!114 &1345630440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114941792224829188, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1345630437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
 --- !u!64 &1345630441
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1244,8 +1117,6 @@ GameObject:
   - component: {fileID: 1550043276}
   - component: {fileID: 1550043275}
   - component: {fileID: 1550043274}
-  - component: {fileID: 1550043273}
-  - component: {fileID: 1550043272}
   m_Layer: 0
   m_Name: polySurface13
   m_TagString: Robot
@@ -1267,32 +1138,6 @@ Transform:
   m_Father: {fileID: 1750048960}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1550043272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114241317599420996, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1550043270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
---- !u!114 &1550043273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114262404656595970, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1550043270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
 --- !u!114 &1550043274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,8 +1307,6 @@ GameObject:
   - component: {fileID: 1856348956}
   - component: {fileID: 1856348955}
   - component: {fileID: 1856348954}
-  - component: {fileID: 1856348953}
-  - component: {fileID: 1856348952}
   m_Layer: 0
   m_Name: polySurface11
   m_TagString: Robot
@@ -1485,32 +1328,6 @@ Transform:
   m_Father: {fileID: 1750048960}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1856348952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114109526365822838, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1856348950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
---- !u!114 &1856348953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114258911149126814, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1856348950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
 --- !u!64 &1856348954
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1581,8 +1398,6 @@ GameObject:
   - component: {fileID: 1902736444}
   - component: {fileID: 1902736443}
   - component: {fileID: 1902736442}
-  - component: {fileID: 1902736441}
-  - component: {fileID: 1902736440}
   m_Layer: 0
   m_Name: polySurface7
   m_TagString: Robot
@@ -1604,32 +1419,6 @@ Transform:
   m_Father: {fileID: 1750048960}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1902736440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114665357226086416, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1902736438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
---- !u!114 &1902736441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114576907922615400, guid: 8e79adff0a3c05d40b0cd1b2fb560e0b,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1902736438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a8118639745264ba942f6e09872922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roboColour: {r: 0, g: 1, b: 0.13103461, a: 0.3}
 --- !u!64 &1902736442
 MeshCollider:
   m_ObjectHideFlags: 0

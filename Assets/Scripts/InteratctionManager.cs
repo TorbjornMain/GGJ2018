@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InteratctionManager : MonoBehaviour {
     public GameObject StoredRobot;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,6 +17,7 @@ public class InteratctionManager : MonoBehaviour {
             Ray toMouse = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit rhInfo;
             bool didHit = Physics.Raycast(toMouse, out rhInfo, 500f);
+
             if(didHit)
             {
                 Debug.Log(rhInfo.collider.name);
