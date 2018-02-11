@@ -5,6 +5,7 @@ using UnityEngine;
 public class RobotTrigger : MonoBehaviour {
     public Vector3 target;
     public GameObject zone;
+
     // Use this for initialization
     void Start () {
     }
@@ -16,6 +17,6 @@ public class RobotTrigger : MonoBehaviour {
 
     public void Tween()
     {
-        LeanTween.rotate(gameObject, target, 1).setEaseInQuad();
+            LeanTween.rotate(gameObject, target, 1).setEaseInQuad();
     }
 }

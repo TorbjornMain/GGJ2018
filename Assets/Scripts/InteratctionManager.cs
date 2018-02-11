@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteratctionManager : MonoBehaviour {
     public GameObject activeRobot;
 
+
 	// Use this for initialization
 	void Start () {
 		

@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Sirenix.OdinInspector;
 
-public class RoombaManager : MonoBehaviour
+public class RobotManager : MonoBehaviour
 {
-	public GameObject target;
+    [Header("RobotType")]
+    [EnumToggleButtons, HideLabel]
+    public RobotType robotType;
+
+    [Header("Target Tracking")]
+    public GameObject target;
     public GameObject targetPrefab;
 	private NavMeshAgent agent;
     public InteratctionManager playerManager;
 
     [SerializeField]
     private bool isMoving = false;
-    [Space(2)]
-    [Header("Mat Management")]
-    public GameObject colourObject1;
-    public GameObject colourObject2;
-    [SerializeField]
-    private Material baseColour;
-    public Material selected;
 
+
+    public enum RobotType {Roomba, Forklift}
 
     // Use this for initialization
     void Start ()
 	{
 		agent = GetComponent<NavMeshAgent>();
-        baseColour = colourObject1.GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -33,13 +33,11 @@ public class RoombaManager : MonoBehaviour
 	{
         if (playerManager.activeRobot == gameObject)
         {
-            colourObject1.GetComponent<Renderer>().material = selected;
-            colourObject2.GetComponent<Renderer>().material = selected;
+            gameObject.GetComponent<ColourSwitcher>().ActiveOn();
         }
         if(playerManager.activeRobot != gameObject)
         {
-            colourObject1.GetComponent<Renderer>().material = baseColour;
-            colourObject2.GetComponent<Renderer>().material = baseColour;
+            gameObject.GetComponent<ColourSwitcher>().ActiveOff();
         }
 
         if(target != null)
