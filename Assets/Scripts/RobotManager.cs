@@ -13,8 +13,11 @@ public class RobotManager : MonoBehaviour
     [Header("Target Tracking")]
     public GameObject target;
     public GameObject targetPrefab;
+    public GameObject forks;
+    public GameObject forkZone;
 	private NavMeshAgent agent;
     public InteratctionManager playerManager;
+
 
     [SerializeField]
     private bool isMoving = false;
@@ -50,6 +53,15 @@ public class RobotManager : MonoBehaviour
             if (target.transform.position.x == gameObject.transform.position.x && target.transform.position.z == gameObject.transform.position.z)
             {
                 Destroy(target.gameObject);
+                //TODO: pick up cube
+                if(forks != null)
+                {
+                    if (forks.GetComponent<ForkliftForks>().IsTouchingPickup())
+                    {
+                        LeanTween.move(forks.GetComponent<ForkliftForks>().pickup, forkZone.transform, 1f);
+                        forks.GetComponent<ForkliftForks>().pickup.transform.parent = forkZone.transform;
+                    }
+                }
                 isMoving = false;
             }
         }
